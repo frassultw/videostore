@@ -1,43 +1,27 @@
 
 
-public class Movie
+public abstract class Movie
 {
-	public enum MovieType{
-		REGULAR(0),
-		NEW_RELEASE(1),
-		CHILDRENS(2);
-
-		public final int value;
-
-		MovieType(int value){
-			this.value = value;
-		}
+	public Movie(String title) {
+		this.title = title;
 	}
 
 	private String title;
-	private MovieType type;
-	private int priceCode;
-	
-	public Movie (String title, MovieType type) {
-		this.title = title;
-		this.type = type;
-		this.priceCode 	= GetPriceCode(type);
-	}
-	
-	public int getPriceCode () {
-		return priceCode;
+
+	protected double baseCost;
+
+	protected double calculateCost(int days) {
+		return baseCost;
 	}
 
-	public MovieType getMovieType(){
-		return type;
+	protected int calculateFrequentRentalPoints(int days)
+	{
+		return 1;
 	}
 
 	public String getTitle () {
 		return title;
 	}
 
-	private int GetPriceCode(MovieType type) {
-		return type.value;
-	}
 	
 }

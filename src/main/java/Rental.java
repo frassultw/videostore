@@ -1,19 +1,12 @@
 
 public class Rental
 {
-	public Rental (Movie movie, int daysRented) {
-		this.movie 		= movie;
-		this.daysRented = daysRented;
+	public Rental (String title, Double cost) {
+		this.title	= title;
+		this.cost = cost.toString();
 	}
-	
-	public int getDaysRented () {
-		return daysRented;
-	}
-	
-	public Movie getMovie () {
-		return movie;
-	}
-	
-	private Movie movie;
-	private int daysRented;
+
+	public String title;
+	public String cost;
+
 }
